@@ -9,12 +9,12 @@ module.exports = {
     },
     output: {
         filename: '[name].bundled.js',
-        path: path.resolve(__dirname, '../', 'build')
+        path: path.resolve(__dirname, '../', 'build'),
     },
 
     devServer: {
         open: true,
-        static: path.resolve(__dirname, '../', 'public'),
+        static: path.resolve(__dirname, '../','src', 'public'),
         port: 5050
     },
     module: {
@@ -25,8 +25,13 @@ module.exports = {
             },
             {
                 test: /\.(jpg|png|svg|gif|jpeg)$/,
-                use: 'file-loader'
-            }
+                use: [{
+                    loader: "file-loader",
+                    options :{
+                        esModule: false
+                    }
+                }]
+            },
 
         ]
     },

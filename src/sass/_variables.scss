@@ -5,8 +5,10 @@ $border-radius-lg: 0;
 $border-radius-sm: 0;
 
 $primary: #c76538;
+$secondary: #2b2725;
 $theme-colors: (
-    "primary": $primary
+    "primary": $primary,
+    "secondary": $secondary
 );
 
 $jumbotron-bg: rgba(#000, 0.5);
